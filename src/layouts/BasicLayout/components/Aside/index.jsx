@@ -2,21 +2,12 @@ import React, { useState, useEffect, useRef } from "react";
 import FoundationSymbol from "@icedesign/foundation-symbol";
 import { Link, withRouter } from "react-router-dom";
 import { Nav } from "@alifd/next";
-import { FormattedMessage } from "react-intl";
 import stores from "@/stores/index";
 import { asideMenuConfig } from "@/config/menu.js";
 import styles from "./index.module.scss";
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
-
-/**
- * menuConfig.js 的 name 属性和 locals/menu.js 的 key 进行对应
- * 在这里进行转换 path: '/chart/basic' => 'app.menu.chart.basic'
- */
-function getLocaleKey(item) {
-  return `app.menu${item.path.replace(/\//g, ".")}`;
-}
 
 /**
  * 二级导航
@@ -35,7 +26,7 @@ function getSubMenuOrItem(item, index) {
           }
           label={
             <span className="ice-menu-collapse-hide">
-              <FormattedMessage id={getLocaleKey(item)} />
+              {item.name}
             </span>
           }
         >
@@ -48,7 +39,7 @@ function getSubMenuOrItem(item, index) {
   return (
     <NavItem key={item.path}>
       <Link to={item.path}>
-        <FormattedMessage id={getLocaleKey(item)} />
+        {item.name}
       </Link>
     </NavItem>
   );
@@ -91,22 +82,12 @@ const Aside = withRouter(props => {
   const expandAside = stores.useStore("expandAside");
   const { collapse, toggle } = expandAside;
 
-  const { location, isMobile } = props;
+  const { location } = props;
   const { pathname } = location;
   const defaultOpenKeys = getDefaultOpenKeys(location);
   const [openKeys, setOpenKeys] = useState(collapse ? [] : defaultOpenKeys);
   const [mode, setMode] = useState("inline");
   const cacheOpenKeys = useRef(openKeys);
-
-  useEffect(() => {
-    if (isMobile) {
-      if (!collapse) {
-        toggle(true);
-      }
-    } else {
-      toggle(false);
-    }
-  }, [isMobile]);
 
   useEffect(() => {
     if (collapse) {

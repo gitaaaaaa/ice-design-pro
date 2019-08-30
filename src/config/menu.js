@@ -4,7 +4,7 @@
 
 const headerMenuConfig = [
   {
-    name: 'feedback',
+    name: '反馈',
     path: 'https://github.com/alibaba/ice',
     external: true,
     newWindow: true,
@@ -13,7 +13,7 @@ const headerMenuConfig = [
   },
 
   {
-    name: 'help',
+    name: '帮助',
     path: 'https://alibaba.github.io/ice',
     external: true,
     newWindow: true,
@@ -28,17 +28,17 @@ const asideMenuConfig = [
     path: '/dashboard',
     icon: 'home2',
     children: [
-      { name: 'monitor', path: '/dashboard/monitor', id: 'Menu_efdml' },
+      { name: '监控页', path: '/dashboard/monitor', id: 'Menu_efdml' },
     ],
     id: 'Menu_j0ovk',
   },
   {
-    name: 'chart',
+    name: '图表页',
     path: '/chart',
     icon: 'chart',
     children: [
-      { name: 'basic', path: '/chart/basic', id: 'Menu_nynhi' },
-      { name: 'general', path: '/chart/general', id: 'Menu_b0hsj' },
+      { name: '基础图表', path: '/chart/basic', id: 'Menu_nynhi' },
+      { name: '通用图表', path: '/chart/general', id: 'Menu_b0hsj' },
     ],
     id: 'Menu_hxt8d',
   },
@@ -47,9 +47,9 @@ const asideMenuConfig = [
     path: '/table',
     icon: 'cascades',
     children: [
-      { name: 'basic', path: '/table/basic', id: 'Menu_iilg0' },
-      { name: 'general', path: '/table/general', id: 'Menu_u6ebc' },
-      { name: 'tree', path: '/table/tree', id: 'Menu_4v9d4' },
+      { name: '基础表格', path: '/table/basic', id: 'Menu_iilg0' },
+      { name: '通用表格', path: '/table/general', id: 'Menu_u6ebc' },
+      { name: '树型表格', path: '/table/tree', id: 'Menu_4v9d4' },
     ],
     id: 'Menu_gdfmd',
   },
@@ -58,40 +58,40 @@ const asideMenuConfig = [
     path: '/list',
     icon: 'menu',
     children: [
-      { name: 'basic', path: '/list/basic', id: 'Menu_santh' },
-      { name: 'general', path: '/list/general', id: 'Menu_3ny47' },
+      { name: '基础列表', path: '/list/basic', id: 'Menu_santh' },
+      { name: '通用列表', path: '/list/general', id: 'Menu_3ny47' },
     ],
     id: 'Menu_16xkl',
   },
   {
-    name: 'profile',
+    name: '内容页',
     path: '/profile',
     icon: 'content',
     children: [
-      { name: 'basic', path: '/profile/basic', id: 'Menu_q787l' },
-      { name: 'terms', path: '/profile/general', id: 'Menu_npem3' },
+      { name: '基础详情页', path: '/profile/basic', id: 'Menu_q787l' },
+      { name: '条款协议页', path: '/profile/general', id: 'Menu_npem3' },
     ],
     id: 'Menu_gdvy6',
   },
   {
-    name: 'result',
+    name: '结果页',
     path: '/result',
     icon: 'question',
     children: [
-      { name: 'success', path: '/result/success', id: 'Menu_wpkox' },
-      { name: 'fail', path: '/result/fail', id: 'Menu_wugwk' },
+      { name: '成功', path: '/result/success', id: 'Menu_wpkox' },
+      { name: '失败', path: '/result/fail', id: 'Menu_wugwk' },
     ],
     id: 'Menu_djtgx',
   },
   {
-    name: 'account',
+    name: '个人页',
     path: '/account',
     icon: 'yonghu',
-    children: [{ name: 'setting', path: '/account/setting', id: 'Menu_9ea3i' }],
+    children: [{ name: '个人设置', path: '/account/setting', id: 'Menu_9ea3i' }],
     id: 'Menu_vswbp',
   },
   {
-    name: 'exception',
+    name: '异常页',
     path: '/exception',
     icon: 'notice',
     children: [

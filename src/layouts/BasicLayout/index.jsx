@@ -3,7 +3,9 @@ import { enquire } from 'enquire-js';
 import Layout from '@icedesign/layout';
 import Header from './components/Header';
 import Aside from './components/Aside';
+import TabMenu from './components/TabMenu';
 import Footer from './components/Footer';
+import AsideDrawer from './components/AsideDrawer';
 
 export default function BasicLayout(props) {
   const [isScreen, setIsScreen] = useState('isDesktop');
@@ -41,12 +43,12 @@ export default function BasicLayout(props) {
       <Layout.Header>
         <Header isMobile={isMobile} />
       </Layout.Header>
-
       <Layout.Section style={{backgroundColor:'rgb(238, 238, 238)'}}>
         <Layout.Aside>
           <Aside isMobile={isMobile} />
         </Layout.Aside>
         <Layout.Main scrollable>
+          <TabMenu />
           <div style={{margin: '15px 15px 0 15px' }}>
             { props.children }
           </div>
@@ -55,6 +57,7 @@ export default function BasicLayout(props) {
           </Layout.Footer>
         </Layout.Main>
       </Layout.Section>
+      <AsideDrawer/>
     </Layout>
   )
 }

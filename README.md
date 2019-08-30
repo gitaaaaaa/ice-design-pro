@@ -42,6 +42,7 @@ $ npm run build  // 构建 dist
 ## 相关文档
 
 - [ICE Design Pro 使用文档](https://github.com/alibaba/ice/wiki#ice-design-pro-%E4%BD%BF%E7%94%A8%E6%96%87%E6%A1%A3)
+- ice-plugin-fusion。themePackage 与 themeConfig 中的变量配置是冲突的，两种方式只能选择一个，[原因](https://github.com/alibaba/ice/pull/1435)
 
 ## 目录结构
 ```ice-design-pro

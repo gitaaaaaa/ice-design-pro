@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
-import FoundationSymbol from '@icedesign/foundation-symbol';
-import { Link, withRouter } from 'react-router-dom';
-import { Nav } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
-import stores from '@/stores/index';
-import { asideMenuConfig } from '@/config/menu.js';
-import styles from './index.module.scss';
+import React, { useState, useEffect, useRef } from "react";
+import FoundationSymbol from "@icedesign/foundation-symbol";
+import { Link, withRouter } from "react-router-dom";
+import { Nav } from "@alifd/next";
+import { FormattedMessage } from "react-intl";
+import stores from "@/stores/index";
+import { asideMenuConfig } from "@/config/menu.js";
+import styles from "./index.module.scss";
 
 const SubNav = Nav.SubNav;
 const NavItem = Nav.Item;
@@ -15,7 +15,7 @@ const NavItem = Nav.Item;
  * 在这里进行转换 path: '/chart/basic' => 'app.menu.chart.basic'
  */
 function getLocaleKey(item) {
-  return `app.menu${item.path.replace(/\//g, '.')}`;
+  return `app.menu${item.path.replace(/\//g, ".")}`;
 }
 
 /**
@@ -28,7 +28,11 @@ function getSubMenuOrItem(item, index) {
       return (
         <SubNav
           key={index}
-          icon={item.icon ? <FoundationSymbol type={item.icon} size="small" /> : null}
+          icon={
+            item.icon ? (
+              <FoundationSymbol type={item.icon} size="small" />
+            ) : null
+          }
           label={
             <span className="ice-menu-collapse-hide">
               <FormattedMessage id={getLocaleKey(item)} />
@@ -83,35 +87,34 @@ function getDefaultOpenKeys(location = {}) {
   return openKeys;
 }
 
-const Aside = withRouter((props) => {
-  const expandAside = stores.useStore('expandAside');
+const Aside = withRouter(props => {
+  const expandAside = stores.useStore("expandAside");
   const { collapse, toggle } = expandAside;
 
   const { location, isMobile } = props;
   const { pathname } = location;
   const defaultOpenKeys = getDefaultOpenKeys(location);
   const [openKeys, setOpenKeys] = useState(collapse ? [] : defaultOpenKeys);
-  const [mode, setMode] = useState('inline');
+  const [mode, setMode] = useState("inline");
   const cacheOpenKeys = useRef(openKeys);
 
   useEffect(() => {
-
     if (isMobile) {
       if (!collapse) {
-        toggle(true)
+        toggle(true);
       }
     } else {
-      toggle(false)
+      toggle(false);
     }
   }, [isMobile]);
 
   useEffect(() => {
     if (collapse) {
       cacheOpenKeys.current = openKeys;
-      setMode('popup');
+      setMode("popup");
       setOpenKeys([]);
     } else {
-      setMode('inline');
+      setMode("inline");
       setOpenKeys(cacheOpenKeys.current);
     }
   }, [collapse]);
@@ -120,19 +123,46 @@ const Aside = withRouter((props) => {
     setOpenKeys(keys);
   }
 
+  // 点击打开tab
+  function onMenuItemClick(key, item, event) {
+    console.log(key)
+    console.log(item);
+    console.log(event);
+  }
+
+  function onSelect(selectedKeys,item,extra){
+    // selectedKeys: {Array} 选中的所有菜单项的值
+    // item: {Object} 选中或取消选中的菜单项
+    // extra: {Object} 额外参数
+    // extra.select: {Boolean} 是否是选中
+    // extra.key: {Array} 菜单项的 key
+    // extra.label: {Object} 菜单项的文本
+    // extra.keyPath: {Array} 菜单项 key 的路径
+    console.log(selectedKeys)
+    console.log(item);
+    console.log(extra);
+    console.log(extra.key);
+    console.log(extra.label);
+    console.log(extra.keyPath);
+  }
+
   return (
-    <div className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside}`}>
+    <div
+      className={`${styles.iceDesignLayoutAside} ${styles.iceDesignProAside}`}
+    >
       <Nav
-        style={{width: collapse ? '60px' : '200px'}}
+        style={{ width: collapse ? "60px" : "200px" }}
         mode={mode}
         iconOnly={collapse}
         hasArrow={!collapse}
-        triggerType={collapse ? 'hover' : 'click'}
+        triggerType={collapse ? "hover" : "click"}
         activeDirection={null}
         openKeys={openKeys}
         selectedKeys={[pathname]}
         defaultSelectedKeys={[pathname]}
         onOpen={onOpenChange}
+        onItemClick={onMenuItemClick}
+        onSelect={onSelect}
       >
         {getNavMenuItems(asideMenuConfig)}
       </Nav>

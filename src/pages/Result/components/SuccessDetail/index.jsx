@@ -4,7 +4,7 @@ import { Button, Step, Message } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
 import styles from './index.module.scss';
 
-export default withRouter((() => {
+export default withRouter(((props) => {
   function handleBackClick() {
     props.history.push('/');
   }
@@ -15,10 +15,10 @@ export default withRouter((() => {
 
   const setpConfig = {
     value: [
-      填写信息,
-      申请审核,
-      开通账号,
-      完成,
+      "填写信息",
+      "申请审核",
+      "开通账号",
+      "完成",
     ],
     current: 1, // 当前步骤
     type: 'dot', // 步骤的类型，可选值: 'circle', 'arrow', 'dot'

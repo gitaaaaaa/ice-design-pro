@@ -36,7 +36,7 @@ Exception.defaultProps = {
 
 Exception.propTypes = {
   statusCode: PropTypes.string,
-  description: PropTypes.element,
+  description: PropTypes.string,
   image: PropTypes.string,
   backText: PropTypes.string,
   redirect: PropTypes.string,

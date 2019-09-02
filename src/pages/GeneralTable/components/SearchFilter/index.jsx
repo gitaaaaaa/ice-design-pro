@@ -23,9 +23,6 @@ const initFields = {
 };
 
 function SearchFilter(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
 
   const [showAdvancedFields, setShowAdvancedFields] = useState(false);
   const [value, setValue] = useState({...initFields.base, ...initFields.advanced});

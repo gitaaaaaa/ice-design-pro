@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Icon, Grid } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 
 const { Row, Col } = Grid;
 
@@ -24,44 +23,44 @@ export default function CollapseCard() {
           />
           <div style={styles.infoIntro}>
             <h3 style={styles.infoTitle}>
-              <FormattedMessage id="app.profile.info.title" />
+            戴森
             </h3>
             <p style={styles.infoDesc}>
-              <FormattedMessage id="app.profile.info.description" />
+            '作为一家英国创新科技公司,戴森致力于设计和研发能用科技来简化人们生活的产品.戴森官方旗舰店保修长达5年,您可以在戴森官方联络中心购买零件,每周7天提供服务'
             </p>
           </div>
         </div>
         <Row style={{ ...styles.baseInfo, ...collapseStyle }}>
           <Col xxs="24" xs="12" s="12" l="12" style={styles.infoItem}>
             <span style={styles.infoItemLabel}>
-              <FormattedMessage id="app.profile.info.activity.label" />：
+              活动标题：
             </span>
             <span style={styles.infoItemValue}>
-              <FormattedMessage id="app.profile.info.activity.value" />
+            活动标题：戴森周年庆活动
             </span>
           </Col>
           <Col xxs="24" xs="12" s="12" l="12" style={styles.infoItem}>
             <span style={styles.infoItemLabel}>
-              <FormattedMessage id="app.profile.info.shop.label" />：
+            店铺名称：
             </span>
             <span style={styles.infoItemValue}>
-              <FormattedMessage id="app.profile.info.shop.value" />
+            戴森周年庆活动
             </span>
           </Col>
           <Col xxs="24" xs="12" s="12" l="12" style={styles.infoItem}>
             <span style={styles.infoItemLabel}>
-              <FormattedMessage id="app.profile.info.starttime.label" />：
+            开始时间：
             </span>
             <span style={styles.infoItemValue}>
-              <FormattedMessage id="app.profile.info.starttime.value" />
+            2017-10-18 12:20:07
             </span>
           </Col>
           <Col xxs="24" xs="12" s="12" l="12" style={styles.infoItem}>
             <span style={styles.infoItemLabel}>
-              <FormattedMessage id="app.profile.info.endtime.label" />：
+            结束时间：
             </span>
             <span style={styles.infoItemValue}>
-              <FormattedMessage id="app.profile.info.endtime.value" />
+            2017-12-18 12:20:07
             </span>
           </Col>
         </Row>

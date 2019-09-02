@@ -1,7 +1,6 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Checkbox, Button, Message } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 export default function TermsInfo() {
@@ -12,7 +11,7 @@ export default function TermsInfo() {
   return (
     <IceContainer>
       <h1 className={styles.title}>
-        <FormattedMessage id="app.terms.title" />
+      淘宝达人合作协议
       </h1>
 
       <div className={styles.content}>
@@ -44,13 +43,13 @@ export default function TermsInfo() {
 
       <p>
         <Checkbox>
-          <FormattedMessage id="app.terms.hint" />
+        我同意《淘宝达人合作协议》
         </Checkbox>
       </p>
 
       <div className={styles.button}>
         <Button type="primary" onClick={handleChange}>
-          <FormattedMessage id="app.terms.btn" />
+        确认
         </Button>
       </div>
     </IceContainer>

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Grid, Progress } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 import Head from './Head';
 import Field from './Field';
 import Trend from './Trend';
@@ -10,26 +9,19 @@ import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-function OverviewChartCard(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
+function OverviewChartCard() {
   return (
     <Row wrap>
       <Col xxs="24" l="6">
         <IceContainer>
           <Head
-            title={formatMessage({
-              id: 'app.chart.general.overview.sales.title',
-            })}
+            title="总销售额"
             content="数据说明"
             total="¥ 126,560"
           />
           <Trend />
           <Field
-            label={formatMessage({
-              id: 'app.chart.general.ovrview.sales.daily',
-            })}
+            label="日均销售额"
             value="￥16,245"
           />
         </IceContainer>
@@ -37,17 +29,13 @@ function OverviewChartCard(props) {
       <Col xxs="24" l="6">
         <IceContainer>
           <Head
-            title={formatMessage({
-              id: 'app.chart.general.overview.visits.title',
-            })}
+            title="访问量"
             content="数据说明"
             total="¥ 6,238"
           />
           <ColumnChart type="area" />
           <Field
-            label={formatMessage({
-              id: 'app.chart.general.ovrview.visits.daily',
-            })}
+            label="日访问量"
             value="2,365"
           />
         </IceContainer>
@@ -55,17 +43,13 @@ function OverviewChartCard(props) {
       <Col xxs="24" l="6">
         <IceContainer>
           <Head
-            title={formatMessage({
-              id: 'app.chart.general.overview.vol.title',
-            })}
+            title="成交量"
             content="数据说明"
             total="9,653"
           />
           <ColumnChart />
           <Field
-            label={formatMessage({
-              id: 'app.chart.general.ovrview.visits.cvr',
-            })}
+            label="转化率"
             value="58%"
           />
         </IceContainer>
@@ -73,9 +57,7 @@ function OverviewChartCard(props) {
       <Col xxs="24" l="6">
         <IceContainer>
           <Head
-            title={formatMessage({
-              id: 'app.chart.general.overview.ratio.title',
-            })}
+            title="完成比例"
             content="数据说明"
             total="51%"
           />
@@ -91,4 +73,4 @@ function OverviewChartCard(props) {
   );
 }
 
-export default injectIntl(OverviewChartCard);
+export default OverviewChartCard;

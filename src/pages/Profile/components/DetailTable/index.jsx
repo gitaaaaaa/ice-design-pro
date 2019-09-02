@@ -1,6 +1,5 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 export default function DetailTable() {
@@ -10,51 +9,51 @@ export default function DetailTable() {
         <ul className={styles.detailTable}>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.task.label" />：
+            任务标题：
             </div>
             <div className={styles.detailBody}>
-              <FormattedMessage id="app.profile.table.task.value" />
+            集盒家居旗舰店双十一活动
             </div>
           </li>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.amount.label" />：
+            单个任务金额：
             </div>
             <div className={styles.detailBody}>
-              ¥ <FormattedMessage id="app.profile.table.amount.value" />
+               ¥ 1000.00
             </div>
           </li>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.deliverytime.label" />
+            接单时间
               ：
             </div>
             <div className={styles.detailBody}>
-              <FormattedMessage id="app.profile.table.deliverytime.value" />
+            2017-10-18 12:20:07
             </div>
           </li>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.contact.label" />：
+            商家联系方式：
             </div>
             <div className={styles.detailBody}>
-              <FormattedMessage id="app.profile.table.contact.value" />
+            151xxxx1213
             </div>
           </li>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.status.label" />：
+            任务状态：
             </div>
             <div className={styles.detailBody}>
-              <FormattedMessage id="app.profile.table.status.value" />
+            进行中
             </div>
           </li>
           <li className={styles.detailItem}>
             <div className={styles.detailTitle}>
-              <FormattedMessage id="app.profile.table.address.label" />：
+            收货地址：
             </div>
             <div className={styles.detailBody}>
-              <FormattedMessage id="app.profile.table.address.value" />
+            浙江省杭州市余杭区文一西路969号淘宝城
             </div>
           </li>
         </ul>

@@ -1,22 +1,16 @@
 import React from 'react';
 import { Grid, Icon } from '@alifd/next';
-import { injectIntl, FormattedMessage } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import AreaChart from './AreaChart';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-function OrderStatusChart(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
+function OrderStatusChart() {;
 
   return (
     <IceContainer
-      title={formatMessage({
-        id: 'app.chart.general.order.status',
-      })}
+      title="订单状态"
     >
       <Row wrap>
         <Col xxs="12" s="12" l="6">
@@ -30,7 +24,7 @@ function OrderStatusChart(props) {
               />
             </h2>
             <p className={styles.textLabel}>
-              <FormattedMessage id="app.chart.general.order.day" />
+            日订单量
             </p>
           </div>
         </Col>
@@ -45,7 +39,7 @@ function OrderStatusChart(props) {
               />
             </h2>
             <p className={styles.textLabel}>
-              <FormattedMessage id="app.chart.general.order.week" />
+            周订单量
             </p>
           </div>
         </Col>
@@ -60,7 +54,7 @@ function OrderStatusChart(props) {
               />
             </h2>
             <p className={styles.textLabel}>
-              <FormattedMessage id="app.chart.general.order.month" />
+            月订单量
             </p>
           </div>
         </Col>
@@ -75,7 +69,7 @@ function OrderStatusChart(props) {
               />
             </h2>
             <p className={styles.textLabel}>
-              <FormattedMessage id="app.chart.general.order.total" />
+            总订单量
             </p>
           </div>
         </Col>
@@ -85,4 +79,4 @@ function OrderStatusChart(props) {
   );
 }
 
-export default injectIntl(OrderStatusChart);
+export default OrderStatusChart;

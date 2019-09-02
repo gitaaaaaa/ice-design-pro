@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Dialog, Button, Form, Input, Field } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 
 const FormItem = Form.Item;
 
@@ -50,7 +49,7 @@ export default function EditDialog(props) {
   return (
     <div style={styles.editDialog}>
       <Button type="primary" onClick={() => onOpen(index, record)}>
-        <FormattedMessage id="app.base.table.btn.edit" />
+      编辑
       </Button>
       <Dialog
         style={{ width: 640 }}

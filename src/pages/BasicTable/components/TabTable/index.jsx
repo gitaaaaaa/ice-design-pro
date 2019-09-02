@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
-import { injectIntl } from 'react-intl';
 import CustomTable from './components/CustomTable';
 import EditDialog from './components/EditDialog';
 import DeleteBalloon from './components/DeleteBalloon';
 import data from './data';
 
-function TabTable(props) {
+function TabTable() {
   const [dataSource, setDataSource] = useState(data);
   const [tabKey, setTabKey] = useState('all');
-  const {
-    intl: { formatMessage },
-  } = props;
+  
   const columns = [
     {
       title: '标题',
@@ -55,10 +52,10 @@ function TabTable(props) {
   ];
 
   const tabs = [
-    { tab: formatMessage({ id: 'app.base.table.tab1' }), key: 'all' },
-    { tab: formatMessage({ id: 'app.base.table.tab2' }), key: 'review' },
-    { tab: formatMessage({ id: 'app.base.table.tab3' }), key: 'released' },
-    { tab: formatMessage({ id: 'app.base.table.tab4' }), key: 'rejected' },
+    { tab: '全部', key: 'all' },
+    { tab: '审核中', key: 'review' },
+    { tab: '已发布', key: 'released' },
+    { tab: '已拒绝', key: 'rejected' },
   ];
 
 
@@ -99,4 +96,4 @@ function TabTable(props) {
   );
 }
 
-export default injectIntl(TabTable);
+export default TabTable

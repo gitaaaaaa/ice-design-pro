@@ -14,7 +14,7 @@ export default function Dashboard() {
       <LatestActivity />
       <ProjectAnalysis />
       <EditableTable />
-      {/*<PieDoughnutChart /> */}
+      <PieDoughnutChart />
     </div>
   );
 }

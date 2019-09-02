@@ -1,9 +1,8 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Label, Shape } from 'bizcharts';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 
-export default injectIntl((props) => {
+export default (() => {
   // 自定义 shape, 支持图片形式的气泡
   Shape.registerShape('point', 'image', {
     drawShape(cfg, container) {
@@ -79,12 +78,10 @@ export default injectIntl((props) => {
       min: 0,
     },
   };
-  const {
-    intl: { formatMessage },
-  } = props;
+ 
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.chart.basic.column.title' })}
+      title="柱状图"
     >
       <Chart
         height={300}

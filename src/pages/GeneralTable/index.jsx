@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Grid } from '@alifd/next';
-import { injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import ContainerTitle from './components/ContainerTitle';
 import ContractTable from './components/ContractTable';
@@ -22,15 +21,13 @@ const mockData = () => {
   });
 };
 
-function GeneralTable(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
-
+function GeneralTable() {
+ 
   const [dataSource, setData] = useState([]);
   const [isLoading, setLoading] = useState(false);
 
   useEffect(() => {
+    debugger
     fetchData();
   }, []);
 
@@ -55,7 +52,7 @@ function GeneralTable(props) {
       <Col l="18">
         <IceContainer style={{ padding: '0' }}>
           <ContainerTitle
-            title={formatMessage({ id: 'app.general.table.title' })}
+            title="合同中心"
           />
           <div style={{ padding: '20px' }}>
             <SearchFilter fetchData={fetchData} />
@@ -74,4 +71,4 @@ function GeneralTable(props) {
   );
 }
 
-export default injectIntl(GeneralTable);
+export default GeneralTable;

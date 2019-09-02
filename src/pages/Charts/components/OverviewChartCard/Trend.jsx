@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import { Icon } from '@alifd/next';
 import styles from './index.module.scss';
 
@@ -12,7 +11,7 @@ export default function Trend(props) {
       <div className={styles.trendItems}>
         <div className={styles.trendItem}>
           <span>
-            <FormattedMessage id="app.chart.general.overview.week" />
+          周同比
             <span className={styles.trendRate}>12%</span>
           </span>
           <span className={styles.arrowIcon}>
@@ -21,7 +20,7 @@ export default function Trend(props) {
         </div>
         <div className={styles.trendItem}>
           <span>
-            <FormattedMessage id="app.chart.general.overview.day" />
+          日同比
             <span className={styles.trendRate}>10%</span>
           </span>
           <span className={styles.arrowIcon}>

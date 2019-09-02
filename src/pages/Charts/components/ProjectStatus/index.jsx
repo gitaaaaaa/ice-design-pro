@@ -1,14 +1,13 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid, Timeline } from '@alifd/next';
-import { injectIntl, FormattedMessage } from 'react-intl';
 import LineChart from './LineChart';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 const { Item: TimelineItem } = Timeline;
 
-function ProjectStatus(props) {
+function ProjectStatus() {
   function renderTimeline() {
     return (
       <Timeline>
@@ -42,22 +41,16 @@ function ProjectStatus(props) {
     );
   }
 
-  const {
-    intl: { formatMessage },
-  } = props;
-
   return (
     <Row wrap>
       <Col xxs="24" l="12" >
         <IceContainer
-          title={formatMessage({
-            id: 'app.chart.general.complete.schedule',
-          })}
+          title="完成进度"
         >
           <LineChart />
           <div className={styles.projectStatus}>
             <p className={styles.meta}>
-              <FormattedMessage id="app.chart.general.complete.state" />
+            当前状态
             </p>
             <h2 className={styles.count}>76,533</h2>
           </div>
@@ -65,9 +58,7 @@ function ProjectStatus(props) {
       </Col>
       <Col xxs="24" l="12" >
         <IceContainer
-          title={formatMessage({
-            id: 'app.chart.general.complete.condition',
-          })}
+          title="完成状态"
           className={styles.container}
         >
           {renderTimeline()}
@@ -77,4 +68,4 @@ function ProjectStatus(props) {
   );
 }
 
-export default injectIntl(ProjectStatus);
+export default ProjectStatus;

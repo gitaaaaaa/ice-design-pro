@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { FormattedMessage, injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import { Input, Radio, Switch, Upload, Grid, Form } from '@alifd/next';
 import styles from './index.module.scss';
@@ -29,7 +28,7 @@ function onError(file) {
   console.log('onError callback : ', file);
 }
 
-export default injectIntl((props) => {
+export default (() => {
   const [value, setValue] = useState({
     name: '',
     gender: 'male',
@@ -55,36 +54,29 @@ export default injectIntl((props) => {
     }
   }
 
-  const {
-    intl: { formatMessage },
-  } = props;
   return (
     <div className="settings-form">
       <IceContainer>
         <Form value={value} onChange={formChange}>
           <div className={styles.formContent}>
             <h2 className={styles.formTitle}>
-              <FormattedMessage id="app.setting.pagetitle" />
+            基本设置
             </h2>
 
             <FormItem
-              label={formatMessage({ id: 'app.setting.name' })}
+              label='姓名'
               {...formItemLayout}
               required
               maxLength={10}
-              requiredMessage={formatMessage({
-                id: 'app.setting.name.message',
-              })}
+              requiredMessage='必填'
             >
               <Input name="name" placeholder="taoxiaobao" />
             </FormItem>
             <FormItem
-              label={formatMessage({ id: 'app.setting.avatar' })}
+              label='头像'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.avatar.message',
-              })}
+              requiredMessage='必填'
             >
               <Upload.Card
                 name="avatar"
@@ -98,46 +90,40 @@ export default injectIntl((props) => {
               />
             </FormItem>
             <FormItem
-              label={formatMessage({ id: 'app.setting.gender' })}
+              label='性别'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.gender.message',
-              })}
+              requiredMessage='必填'
             >
               <RadioGroup name="gender">
                 <Radio value="male">
-                  <FormattedMessage id="app.setting.male" />
+                男
                 </Radio>
                 <Radio value="female">
-                  <FormattedMessage id="app.setting.female" />
+                女
                 </Radio>
               </RadioGroup>
             </FormItem>
 
             <FormItem
-              label={formatMessage({ id: 'app.setting.notification' })}
+              label='通知'
               {...formItemLayout}
             >
               <Switch name="notice" />
             </FormItem>
             <FormItem
-              label={formatMessage({ id: 'app.setting.email' })}
+              label='邮箱'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.email.message',
-              })}
+              requiredMessage='请输入正确的邮箱地址'
             >
               <Input htmlType="email" name="email" />
             </FormItem>
             <FormItem
-              label={formatMessage({ id: 'app.setting.website' })}
+              label='网站地址'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.website.message',
-              })}
+              requiredMessage='请输入正确的网站地址'
               format="url"
             >
               <Input
@@ -148,12 +134,10 @@ export default injectIntl((props) => {
             </FormItem>
 
             <FormItem
-              label={formatMessage({ id: 'app.setting.github' })}
+              label='Github'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.github.message',
-              })}
+              requiredMessage='请输入正确的 GitHub 账号'
               format="url"
             >
               <Input
@@ -164,19 +148,17 @@ export default injectIntl((props) => {
             </FormItem>
 
             <FormItem
-              label={formatMessage({ id: 'app.setting.twitter' })}
+              label='Twitter'
               {...formItemLayout}
               required
-              requiredMessage={formatMessage({
-                id: 'app.setting.twitter.message',
-              })}
+              requiredMessage='请输入正确的 Twitter 账号'
               format="url"
             >
               <Input name="twitterUrl" placeholder="https://twitter.com" />
             </FormItem>
 
             <FormItem
-              label={formatMessage({ id: 'app.setting.description' })}
+              label='自我描述'
               {...formItemLayout}
             >
               <Input.TextArea placeholder="请输入描述..." />
@@ -189,7 +171,7 @@ export default injectIntl((props) => {
                   validate
                   onClick={validateAllFormField}
                 >
-                  <FormattedMessage id="app.setting.submit" />
+                  提交
                 </Form.Submit>
               </Col>
             </Row>

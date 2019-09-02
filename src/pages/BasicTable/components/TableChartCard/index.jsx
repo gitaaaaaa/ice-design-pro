@@ -1,7 +1,6 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Grid } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 import CustomTable from './CustomTable';
 import PirChart from './PieChart';
 import styles from './index.module.scss';
@@ -12,7 +11,7 @@ export default function TableChartCard() {
   return (
     <IceContainer className={styles.container}>
       <h4 className={styles.title}>
-        <FormattedMessage id="app.base.table.title" />
+      数据分析
       </h4>
       <Row wrap>
         <Col l="8">

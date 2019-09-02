@@ -1,6 +1,5 @@
 import React from 'react';
 import { Button, Message } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
@@ -18,17 +17,17 @@ export default function FailureDetail() {
           alt=""
         />
         <h3 className={styles.title}>
-          <FormattedMessage id="app.result.fail.title" />
+        提交失败
         </h3>
       </div>
       <p className={styles.summary}>
-        <FormattedMessage id="app.result.fail.summary" />
+      提供信息不符合要求，请重新提交
       </p>
       <p className={styles.descrpiton}>
-        <FormattedMessage id="app.result.fail.description" />
+      如果有更多细节需要展示，可以补充在这里，一些相关的介绍和描述
       </p>
       <Button type="primary" onClick={handleChange}>
-        <FormattedMessage id="app.result.fail.back" />
+      返回修改
       </Button>
     </IceContainer>
   );

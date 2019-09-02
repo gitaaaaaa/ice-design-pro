@@ -1,10 +1,9 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip, Legend } from 'bizcharts';
-import { injectIntl } from 'react-intl';
 import DataSet from '@antv/data-set';
 import IceContainer from '@icedesign/container';
 
-export default injectIntl((props) => {
+export default (() => {
   const data = [
     {
       month: 'Jan',
@@ -82,11 +81,9 @@ export default injectIntl((props) => {
       range: [0, 1],
     },
   };
-  const {
-    intl: { formatMessage },
-  } = props;
+  
   return (
-    <IceContainer title={formatMessage({ id: 'app.chart.basic.line.title' })}>
+    <IceContainer title="曲线图">
       <Chart height={300} data={dv} scale={cols} forceFit>
         <Legend />
         <Axis name="month" />

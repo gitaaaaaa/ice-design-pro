@@ -2,10 +2,9 @@ import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Button, Step, Message } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
-import { FormattedMessage, injectIntl } from 'react-intl';
 import styles from './index.module.scss';
 
-export default withRouter(injectIntl((props) => {
+export default withRouter((() => {
   function handleBackClick() {
     props.history.push('/');
   }
@@ -14,15 +13,12 @@ export default withRouter(injectIntl((props) => {
     Message.success('可以根据实际需求自定义查看更多');
   }
 
-  const {
-    intl: { formatMessage },
-  } = props;
   const setpConfig = {
     value: [
-      formatMessage({ id: 'app.result.success.step1.title' }),
-      formatMessage({ id: 'app.result.success.step2.title' }),
-      formatMessage({ id: 'app.result.success.step3.title' }),
-      formatMessage({ id: 'app.result.success.step4.title' }),
+      填写信息,
+      申请审核,
+      开通账号,
+      完成,
     ],
     current: 1, // 当前步骤
     type: 'dot', // 步骤的类型，可选值: 'circle', 'arrow', 'dot'
@@ -37,14 +33,14 @@ export default withRouter(injectIntl((props) => {
           alt=""
         />
         <h3 className={styles.title}>
-          <FormattedMessage id="app.result.success.title" />
+        提交成功
         </h3>
       </div>
       <p className={styles.summary}>
-        <FormattedMessage id="app.result.success.summary" />
+      本文字区域可以展示简单的说明
       </p>
       <p className={styles.descrpiton}>
-        <FormattedMessage id="app.result.success.description" />
+      如果有跟多细节需要展示，可以补充在下面这里，一些相关的介绍和描述
       </p>
       <Step current={current} shape={type} className={styles.step}>
         {value.map((item, index) => {
@@ -57,10 +53,10 @@ export default withRouter(injectIntl((props) => {
           onClick={handleBackClick}
           style={{ marginRight: '6px' }}
         >
-          <FormattedMessage id="app.result.success.back.btn1" />
+          返回首页
         </Button>
         <Button type="primary" onClick={handleLinkClick}>
-          <FormattedMessage id="app.result.success.back.btn2" />
+        查看更多
         </Button>
       </div>
     </IceContainer>

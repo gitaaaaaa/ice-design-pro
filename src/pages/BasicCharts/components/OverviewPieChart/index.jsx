@@ -2,45 +2,42 @@ import React from 'react';
 import { Chart, Geom, Tooltip, Coord } from 'bizcharts';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default injectIntl((props) => {
-  const {
-    intl: { formatMessage },
-  } = props;
+export default (() => {
+ 
   const mockData = [
     {
       chartData: [
         { type: '分类一', value: 20 },
         { type: '分类二', value: 80 },
       ],
-      title: formatMessage({ id: 'app.chart.basic.overview.share' }),
-      summary: formatMessage({ id: 'app.chart.basic.overview.retai' }),
+      title: "销售占比",
+      summary: "新零售",
     },
     {
       chartData: [
         { type: '分类一', value: 50 },
         { type: '分类二', value: 50 },
       ],
-      title: formatMessage({ id: 'app.chart.basic.overview.share' }),
-      summary: formatMessage({ id: 'app.chart.basic.overview.physical' }),
+      title: "销售占比",
+      summary: "实体店",
     },
     {
       chartData: [
         { type: '分类一', value: 80 },
         { type: '分类二', value: 20 },
       ],
-      title: formatMessage({ id: 'app.chart.basic.overview.share' }),
-      summary: formatMessage({ id: 'app.chart.basic.overview.taobao' }),
+      title: "销售占比",
+      summary: "淘宝店",
     },
   ];
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.chart.basic.overview.title' })}
+      title="概览数据"
     >
       <Row wrap>
         {mockData.map((item, index) => {

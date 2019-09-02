@@ -1,6 +1,5 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 import ContainerTitle from '../ContainerTitle';
 import styles from './index.module.scss';
 
@@ -47,9 +46,6 @@ const mockData = [
 ];
 
 function SearchHistory(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
 
   function handleQuery() {
     props.fetchData();
@@ -58,7 +54,7 @@ function SearchHistory(props) {
   return (
     <IceContainer className={styles.container}>
       <ContainerTitle
-        title={formatMessage({ id: 'app.general.history.title' })}
+        title="搜索历史"
       />
       <div className={styles.historyList}>
         {mockData.map((item, index) => {
@@ -88,4 +84,4 @@ function SearchHistory(props) {
   );
 }
 
-export default injectIntl(SearchHistory);
+export default SearchHistory;

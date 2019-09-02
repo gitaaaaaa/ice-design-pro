@@ -1,35 +1,31 @@
 import React from 'react';
 import { Grid, Progress } from '@alifd/next';
-import { injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
 
-export default injectIntl((props) => {
-  const {
-    intl: { formatMessage },
-  } = props;
-  const i18n = (value) => formatMessage({ id: value });
+export default (() => {
+
   const mockData = [
     {
       percent: 100,
-      title: i18n('app.list.project.overview.all'),
+      title: '所有任务',
       value: 3841,
     },
     {
       percent: 60,
-      title: i18n('app.list.project.overview.unsolved'),
+      title: '未解决',
       value: 2931,
     },
     {
       percent: 10,
-      title: i18n('app.list.project.overview.pending'),
+      title: '处理中',
       value: 384,
     },
     {
       percent: 30,
-      title: i18n('app.list.project.overview.solved'),
+      title: '已解决',
       value: 2398,
     },
   ];

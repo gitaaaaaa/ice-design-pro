@@ -6,7 +6,6 @@ import {
   FormBinder as IceFormBinder,
   FormError as IceFormError,
 } from '@icedesign/form-binder';
-import { FormattedMessage } from 'react-intl';
 import styles from './index.module.scss';
 
 const { Row, Col } = Grid;
@@ -105,10 +104,10 @@ export default function CustomForm(props) {
               style={{ marginRight: '10px' }}
               onClick={handleSubmit}
             >
-              <FormattedMessage id="app.general.table.btn.search" />
+              搜索
             </Button>
             <Button type="normal" onClick={handleReset}>
-              <FormattedMessage id="app.general.table.btn.reset" />
+            重置
             </Button>
           </div>
           {extraContent}

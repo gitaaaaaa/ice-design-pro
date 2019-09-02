@@ -1,18 +1,13 @@
 import React from 'react';
 import { Grid } from '@alifd/next';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 import { Chart, Coord, Geom, Tooltip, Axis, Legend } from 'bizcharts';
 import DataSet from '@antv/data-set';
 
 const { Row, Col } = Grid;
 const { DataView } = DataSet;
 
-function PieDoughnutChart(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
-
+function PieDoughnutChart() {
   const data = [
     { genre: '男', sold: 500 },
     { genre: '女', sold: 200 },
@@ -56,7 +51,7 @@ function PieDoughnutChart(props) {
       <Row wrap>
         <Col xxs="24" s="24" l="12">
           <IceContainer
-            title={formatMessage({ id: 'app.dashboard.gender.share' })}
+            title="性别占比"
             style={styles.leftContainer}
           >
             <Chart
@@ -80,7 +75,7 @@ function PieDoughnutChart(props) {
         </Col>
         <Col xxs="24" s="24" l="12">
           <IceContainer
-            title={formatMessage({ id: 'app.dashboard.age.distribution' })}
+            title="年龄分布"
             style={styles.rightContainer}
           >
             <Chart
@@ -110,4 +105,4 @@ function PieDoughnutChart(props) {
 
 const styles = {};
 
-export default injectIntl(PieDoughnutChart);
+export default PieDoughnutChart;

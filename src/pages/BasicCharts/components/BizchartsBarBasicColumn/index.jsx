@@ -1,9 +1,8 @@
 import React from 'react';
 import { Chart, Geom, Axis, Tooltip } from 'bizcharts';
-import { injectIntl } from 'react-intl';
 import IceContainer from '@icedesign/container';
 
-export default injectIntl((props) => {
+export default (() => {
   const data = [
     {
       year: '1951 年',
@@ -43,12 +42,10 @@ export default injectIntl((props) => {
       tickInterval: 20,
     },
   };
-  const {
-    intl: { formatMessage },
-  } = props;
+
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.chart.basic.bubble.title' })}
+      title="气泡图"
     >
       <Chart height={400} data={data} scale={cols} forceFit>
         <Axis name="year" />

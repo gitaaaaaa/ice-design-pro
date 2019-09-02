@@ -1,6 +1,5 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
-import { injectIntl, FormattedMessage } from 'react-intl';
 import { Table, Progress, Pagination, Dialog } from '@alifd/next';
 import { withRouter } from 'react-router-dom';
 import DATA from './data';
@@ -27,13 +26,13 @@ function renderAction() {
         onClick={handleEdit}
         className={styles.hb}
       >
-        <FormattedMessage id="app.btn.edit" />
+        编辑
       </a>
       <a
         onClick={handleRemove}
         className={styles.hb2}
       >
-        <FormattedMessage id="app.btn.delete" />
+        删除
       </a>
     </div>
   );
@@ -87,13 +86,11 @@ function renderTeam(value) {
   );
 }
 
-export default withRouter(injectIntl((props) => {
-  const {
-    intl: { formatMessage },
-  } = props;
+export default withRouter((() => {
+
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.list.project.table.title' })}
+      title="项目列表"
     >
       <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
         <Table.Column title="项目名称" dataIndex="name" />

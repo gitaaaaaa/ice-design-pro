@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Icon } from '@alifd/next';
-import { injectIntl, FormattedMessage } from 'react-intl';
 import CustomForm from '../CustomForm';
 import styles from './index.module.scss';
 
@@ -67,7 +66,7 @@ function SearchFilter(props) {
   function renderExtraContent() {
     return (
       <div className={styles.extraContent} onClick={handleAdvancedSearch}>
-        <FormattedMessage id="app.general.form.advanced.search" />{' '}
+        高级搜索{' '}
         <Icon
           size="xs"
           type={showAdvancedFields ? 'arrow-up' : 'arrow-down'}
@@ -98,10 +97,9 @@ function SearchFilter(props) {
     };
   }
 
-  const i18n = (formatValue) => formatMessage({ id: formatValue });
   const config = [
     {
-      label: i18n('app.general.form.number'),
+      label: "合同编号",
       component: 'Input',
       componentProps: {
         placeholder: '请输入合同编号',
@@ -113,7 +111,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.archive'),
+      label: "归档号",
       component: 'Input',
       componentProps: {
         placeholder: '请输入归档号',
@@ -125,7 +123,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.apply'),
+      label: "申请单号",
       component: 'Input',
       componentProps: {
         placeholder: '请输入申请单号',
@@ -135,7 +133,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.name'),
+      label:"合同名称",
       component: 'Input',
       componentProps: {
         placeholder: '请输入合同名称',
@@ -145,7 +143,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.company'),
+      label: "对方公司",
       component: 'Select',
       componentProps: {
         placeholder: '请选择',
@@ -160,7 +158,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.principal'),
+      label: "负责人",
       component: 'Select',
       componentProps: {
         placeholder: '请选择',
@@ -175,7 +173,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.createtime'),
+      label: "创建时间",
       component: 'RangePicker',
       componentProps: {
         placeholder: '请选择日期',
@@ -187,7 +185,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.signingtime'),
+      label: "签订时间",
       component: 'RangePicker',
       componentProps: {
         placeholder: '请选择日期',
@@ -199,7 +197,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.endtime'),
+      label: "终止时间",
       component: 'RangePicker',
       componentProps: {
         placeholder: '请选择日期',
@@ -211,7 +209,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.state'),
+      label: "合同状态",
       component: 'Select',
       componentProps: {
         placeholder: '请选择',
@@ -228,7 +226,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.type'),
+      label: "合同类型",
       component: 'Select',
       componentProps: {
         placeholder: '请选择',
@@ -243,7 +241,7 @@ function SearchFilter(props) {
       },
     },
     {
-      label: i18n('app.general.form.hint'),
+      label: "查询我批准的合同",
       component: 'Checkbox',
       componentProps: {},
       formBinderProps: {
@@ -264,4 +262,4 @@ function SearchFilter(props) {
   );
 }
 
-export default injectIntl(SearchFilter);
+export default SearchFilter;

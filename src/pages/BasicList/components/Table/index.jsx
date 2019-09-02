@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { Table, Pagination, Button, Dialog } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import FilterTag from '../FilterTag';
 import FilterForm from '../FilterForm';
@@ -86,10 +85,10 @@ export default function GoodsTable() {
           style={{ marginRight: '5px' }}
           onClick={handleDetail}
         >
-          <FormattedMessage id="app.btn.detail" />
+          详情
         </Button>
         <Button type="normal" warning onClick={handleDelete}>
-          <FormattedMessage id="app.btn.delete" />
+        删除
         </Button>
       </div>
     );

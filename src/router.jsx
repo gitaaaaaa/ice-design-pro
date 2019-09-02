@@ -4,6 +4,7 @@ import path from 'path';
 import routes from '@/config/routes';
 import PageLoading from '@/components/PageLoading';
 
+// 路由生成
 const RouteItem = (props) => {
   const { redirect, path: routePath, component, key } = props;
   if (redirect) {

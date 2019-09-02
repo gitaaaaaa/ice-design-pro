@@ -1,30 +1,24 @@
 import React from 'react';
-import { injectIntl } from 'react-intl';
 import Card from '../Card';
 import BarChart from './BarChart';
 
-function LatestActivity(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
+function LatestActivity() {
 
   const dataSource = Array.from({ length: 10 }).map((item, index) => {
     return {
-      name: `${index + 1}. ${formatMessage({
-        id: 'app.dashboard.activity.festival',
-      })}`,
+      name: `${index + 1}` + ". 淘宝造物节",
       num: parseInt(Math.random() * 1000, 10),
     };
   });
 
   const columns = [
     {
-      title: formatMessage({ id: 'app.dashboard.activity.spacename' }),
+      title: "空间名称",
       dataIndex: 'name',
       key: 'name',
     },
     {
-      title: formatMessage({ id: 'app.dashboard.activity.number' }),
+      title: "发布活动次数",
       dataIndex: 'num',
       key: 'num',
     },
@@ -32,22 +26,20 @@ function LatestActivity(props) {
 
   return (
     <Card
-      title={formatMessage({ id: 'app.dashboard.activity.latest' })}
-      subTitle={`${formatMessage({
-        id: 'app.dashboard.activity.latestweek',
-      })} TOP 10`}
+      title="最新发布活动"
+      subTitle="最近一周 TOP 10"
       summary={[
         {
-          label: formatMessage({ id: 'app.dashboard.activity.week' }),
+          label: "本周发布活动数",
           value: '123',
         },
         {
-          label: formatMessage({ id: 'app.dashboard.activity.accumulative' }),
+          label: "累计发布活动数",
           value: '23,239',
         },
       ]}
       link={{
-        text: formatMessage({ id: 'app.dashboard.activity.list' }),
+        text: "发布活动明细",
         href: '#',
       }}
       dataSource={dataSource}
@@ -57,4 +49,4 @@ function LatestActivity(props) {
   );
 }
 
-export default injectIntl(LatestActivity);
+export default LatestActivity;

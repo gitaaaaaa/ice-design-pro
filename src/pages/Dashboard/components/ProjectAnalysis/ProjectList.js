@@ -1,7 +1,6 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Table, Progress } from '@alifd/next';
-import { injectIntl } from 'react-intl';
 
 const DATA = [
   {
@@ -62,14 +61,10 @@ const DATA = [
   },
 ];
 
-function TopActiveChart(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
-
+function TopActiveChart() {
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.dashboard.project.table.title' })}
+      title="项目列表"
     >
       <Table dataSource={DATA} hasBorder={false} style={{ width: '100%' }}>
         <Table.Column title="项目名称" dataIndex="name" />
@@ -86,4 +81,4 @@ function TopActiveChart(props) {
   );
 }
 
-export default injectIntl(TopActiveChart);
+export default TopActiveChart;

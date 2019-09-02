@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from '@alifd/next';
-import { FormattedMessage } from 'react-intl';
 import PropTypes from 'prop-types';
 import styles from './index.module.scss';
 
@@ -23,7 +22,7 @@ export default function RankList(props) {
       </Table>
       <div className={styles.footer}>
         <a href="#" className={styles.link}>
-          <FormattedMessage id="app.dashboard.activity.more" />
+          更多
         </a>
       </div>
     </div>

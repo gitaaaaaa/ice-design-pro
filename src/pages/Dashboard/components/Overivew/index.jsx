@@ -1,5 +1,4 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 import IceContainer from '@icedesign/container';
 import { Balloon, Grid, Icon } from '@alifd/next';
 import styles from './index.module.scss';
@@ -26,10 +25,10 @@ export default function Overivew() {
   const yoy = (
     <div className={styles.desc}>
       <span>
-        <FormattedMessage id="app.dashboard.overview.week" /> {down} -200
+        周同比 {down} -200
       </span>
       <span className={{ marginLeft: 5 }}>
-        <FormattedMessage id="app.dashboard.overview.day" /> {up} +100
+        日同比 {up} +100
       </span>
     </div>
   );
@@ -61,7 +60,7 @@ export default function Overivew() {
       <Row wrap>
         <Col xxs="24" s="12" l="6" className={styles.item}>
           <div className={styles.title}>
-            <FormattedMessage id="app.dashboard.overview.day.sales" />
+            今日交易总额
             {extraIcon}
           </div>
           <div className={styles.count}>￥ 146,657</div>
@@ -69,7 +68,7 @@ export default function Overivew() {
         </Col>
         <Col xxs="24" s="12" l="6" className={styles.item}>
           <div className={styles.title}>
-            <FormattedMessage id="app.dashboard.overview.today.transactions" />
+            >销售目标完成率
             {extraIcon}
           </div>
           <div className={styles.count}>92%</div>
@@ -77,7 +76,7 @@ export default function Overivew() {
         </Col>
         <Col xxs="24" s="12" l="6" className={styles.item}>
           <div className={styles.title}>
-            <FormattedMessage id="app.dashboard.overview.second.transactions" />
+            每秒交易总额
             {extraIcon}
           </div>
           <div className={styles.count}>￥ 833</div>
@@ -85,7 +84,7 @@ export default function Overivew() {
         </Col>
         <Col xxs="24" s="12" l="6" className={styles.item}>
           <div className={styles.title}>
-            <FormattedMessage id="app.dashboard.overview.total.sales" />
+            总销售额
             {extraIcon}
           </div>
           <div className={styles.count}>￥ 23,333</div>

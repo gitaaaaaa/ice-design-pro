@@ -1,6 +1,5 @@
 .container {
   padding: 0;
-  overflow: scroll;
 }
 .content {
   position: relative;
@@ -52,7 +51,8 @@
   border-bottom: 1px solid #f0f0f0;
 }
 .table {
-  margin: 0 10px;
+  max-height: 354px;
+  overflow-y: auto;
 }
 .footer {
   display: flex;

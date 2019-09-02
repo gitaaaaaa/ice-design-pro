@@ -9,7 +9,7 @@ const { Row, Col } = Grid;
 export default function Overview() {
   return (
     <Row wrap>
-      <Col l="16">
+      <Col l="16" style={{paddingRight:"20px"}}>
         <ProjectList />
       </Col>
       <Col l="8">

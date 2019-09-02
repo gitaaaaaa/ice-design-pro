@@ -1,13 +1,9 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Chart, Geom, Axis, Tooltip, Coord, Label } from 'bizcharts';
-import { injectIntl } from 'react-intl';
 import DataSet from '@antv/data-set';
 
 function PieChart(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
   const { DataView } = DataSet;
   const data = [
     {
@@ -49,7 +45,7 @@ function PieChart(props) {
 
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.dashboard.project.pie.title' })}
+      title="收入分析"
     >
       <Chart height={180} data={dv} scale={cols} padding={[2]} forceFit>
         <Coord type="theta" radius={1} />
@@ -93,4 +89,4 @@ function PieChart(props) {
   );
 }
 
-export default injectIntl(PieChart);
+export default PieChart;

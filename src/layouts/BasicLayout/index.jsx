@@ -17,7 +17,7 @@ export default function BasicLayout(props) {
         <Layout.Aside>
           <Aside />
         </Layout.Aside>
-        {/* <Layout.Main scrollable>
+        <Layout.Main scrollable>
           <TabMenu />
           <div style={{margin: '15px 15px 0 15px' }}>
             { props.children }
@@ -25,7 +25,7 @@ export default function BasicLayout(props) {
           <Layout.Footer>
             <Footer />
           </Layout.Footer>
-        </Layout.Main> */}
+        </Layout.Main>
       </Layout.Section>
       {/* <AsideDrawer/> */}
     </Layout>

@@ -1,15 +1,11 @@
 import React from 'react';
 import IceContainer from '@icedesign/container';
 import { Tab } from '@alifd/next';
-import { injectIntl } from 'react-intl';
 import SeriesLine from './SeriesLine';
 import BasicLine from './BasicLine';
 import styles from './index.module.scss';
 
-function TabChart(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
+function TabChart() {
 
   function handleChange(key) {
     console.log('change', key);
@@ -21,13 +17,13 @@ function TabChart(props) {
         <Tab onChange={handleChange}>
           <Tab.Item
             key="1"
-            title={formatMessage({ id: 'app.dashboard.trend.income' })}
+            title="收益走势"
           >
             <SeriesLine />
           </Tab.Item>
           <Tab.Item
             key="2"
-            title={formatMessage({ id: 'app.dashboard.trend.trans' })}
+            title="成交走势"
           >
             <BasicLine />
           </Tab.Item>
@@ -37,4 +33,4 @@ function TabChart(props) {
   );
 }
 
-export default injectIntl(TabChart);
+export default TabChart;

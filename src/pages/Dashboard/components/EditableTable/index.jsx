@@ -1,33 +1,25 @@
 import React, { useState } from 'react';
 import IceContainer from '@icedesign/container';
-import { injectIntl, FormattedMessage } from 'react-intl';
 import { Table, Button } from '@alifd/next';
 import CellEditor from './CellEditor';
 import styles from './index.module.scss';
 
-function EditableTable(props) {
-  const {
-    intl: { formatMessage },
-  } = props;
+function EditableTable() {
 
   const [dataSource, setData] = useState(generatorData());
 
   function generatorData() {
     return Array.from({ length: 5 }).map((item, index) => {
       return {
-        todo: `${formatMessage({
-          id: 'app.dashboard.todo.item.value',
-        })} ${index}`,
-        remark: `${formatMessage({
-          id: 'app.dashboard.todo.remark.value',
-        })} ${index}`,
+        todo: "待办事项" +  `${index + 1}`,
+        remark: "备注说明文案" + `${index + 1}`,
         validity: '2017-12-12',
       };
     });
   }
 
   function renderOrder(value, index) {
-    return <span>{index}</span>;
+    return <span>{index+1}</span>;
   }
 
   function deleteItem(index) {
@@ -40,7 +32,7 @@ function EditableTable(props) {
   function renderOperation(value, index) {
     return (
       <Button type="primary" onClick={() => deleteItem(index)}>
-        <FormattedMessage id="app.dashboard.todo.delete" />
+        删除
       </Button>
     );
   }
@@ -64,7 +56,7 @@ function EditableTable(props) {
   }
 
   function addNewItem() {
-    const text = formatMessage({ id: 'app.dashboard.todo.empty' });
+    const text = "空";
     dataSource.push({
       todo: text,
       remark: text,
@@ -76,7 +68,7 @@ function EditableTable(props) {
   }
 
   return (
-    <IceContainer title={formatMessage({ id: 'app.dashboard.todo.title' })}>
+    <IceContainer title="待办事项">
       <Table
         dataSource={dataSource}
         hasBorder={false}
@@ -84,41 +76,41 @@ function EditableTable(props) {
       >
         <Table.Column
           width={80}
-          title={formatMessage({ id: 'app.dashboard.todo.index' })}
+          title="顺序"
           cell={renderOrder}
         />
         <Table.Column
           width={280}
-          title={formatMessage({ id: 'app.dashboard.todo.index' })}
+          title="待办事项"
           cell={(value, index, record) => {
             renderEditor('todo', value, index, record);
           }}
         />
         <Table.Column
           width={240}
-          title={formatMessage({ id: 'app.dashboard.todo.remark' })}
+          title="备注"
           cell={(value, index, record) => {
             renderEditor('remark', value, index, record);
           }}
         />
         <Table.Column
           width={180}
-          title={formatMessage({ id: 'app.dashboard.todo.time' })}
+          title="有效时间"
           cell={(value, index, record) => {
             renderEditor('validity', value, index, record);
           }}
         />
         <Table.Column
-          title={formatMessage({ id: 'app.dashboard.todo.oper' })}
+          title="操作"
           width={80}
           cell={renderOperation}
         />
       </Table>
       <div onClick={addNewItem} className={styles.addNewItem}>
-        + <FormattedMessage id="app.dashboard.todo.newline" />
+        + 新增
       </div>
     </IceContainer>
   );
 }
 
-export default injectIntl(EditableTable);
+export default EditableTable;

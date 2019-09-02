@@ -1,12 +1,10 @@
 import React from 'react';
 import { Chart, Geom, Tooltip } from 'bizcharts';
 import IceContainer from '@icedesign/container';
-import { injectIntl } from 'react-intl';
 
 function LineChart(props) {
   const {
-    color,
-    intl: { formatMessage },
+    color
   } = props;
 
   const data = [
@@ -29,10 +27,10 @@ function LineChart(props) {
 
   return (
     <IceContainer
-      title={formatMessage({ id: 'app.dashboard.project.line.title' })}
+      title="销售收入" style={{marginBottom:'0'}}
     >
       <Chart
-        height={74}
+        height={94}
         forceFit
         padding={[10, 2, 2, 2]}
         data={data}
@@ -50,4 +48,4 @@ function LineChart(props) {
   );
 }
 
-export default injectIntl(LineChart);
+export default LineChart;
